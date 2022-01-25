@@ -6,6 +6,7 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $message = $_POST['message'];
 $subject = $_POST['subject'];
+$phone = $_POST['phone'];
 $from = $email;
 $to = 'abc@xyz.com'; //Replace with email id
 
@@ -14,7 +15,7 @@ $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 $headers .= "From: $from\n";
 $headers .= "Reply-To: $from";
 
-$body = "From: $name\n E-Mail: $email\n Message:\n $message";
+$body = "From: $name\n E-Mail: $email\n ContactNumber: $phone\n Message:\n $message";
 
 // Check if name has been entered
 if (!$_POST['name']) {
