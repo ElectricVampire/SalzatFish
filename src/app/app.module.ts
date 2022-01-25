@@ -30,7 +30,7 @@ import { InvestmentComponent } from './investment/investment.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    // AppRoutingModule,
     NgbModule
   ],
   providers: [],
