@@ -41,3 +41,4 @@ if (!$errName && !$errEmail && !$errMessage) {
     $result = '<div class="alert alert-danger">Sorry there was an error sending your message. Please try again later</div>';
   }
 }
+?>
