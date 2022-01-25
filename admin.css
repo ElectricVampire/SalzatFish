@@ -1250,7 +1250,6 @@ body {
     color: #fff;
     transition: 0.4s;
     cursor: pointer;
-    font-family: 'Roboto', sans-serif;
   }
   #contact .php-email-form button[type=submit]:hover {
     background: #13a456;
@@ -1916,21 +1915,22 @@ body {
     margin-bottom: 0;
   }
 
-    .custombutton{
-      background: #18d26e;
-      border: 0;
-      padding: 10px 30px;
-      color: #fff;
-      transition: 0.4s;
-      cursor: pointer;
-      font-family: 'Roboto', sans-serif;
-  }
   
-  .tabcontents
-  {
-    border: 1px solid #ccc;
-  }
+.custombutton{
+  background: #18d26e;
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+}
 
-  .tab button.active {    
-    text-decoration: underline;
-  }
+.tabcontents
+{
+border: 1px solid #ccc;
+}
+
+.tab button.active {    
+text-decoration: underline;
+}
