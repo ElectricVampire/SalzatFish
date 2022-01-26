@@ -9,7 +9,13 @@ export class ProductsComponent implements OnInit {
 
   constructor() { }
 
+  productname = "Pomfret";
   ngOnInit(): void {
+  }
+
+  select(productName:string)
+  {
+    this.productname = productName;
   }
 
 }
