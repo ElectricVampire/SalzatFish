@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2022 at 02:46 PM
+-- Generation Time: Jan 27, 2022 at 04:41 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.14
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `customerdata` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
   `age` int(11) DEFAULT NULL,
   `gender` char(1) DEFAULT NULL,
@@ -37,27 +37,7 @@ CREATE TABLE `customerdata` (
   `email` varchar(50) DEFAULT NULL,
   `visit_time` datetime DEFAULT current_timestamp(),
   `address` varchar(250) DEFAULT NULL,
-  `comments` varchar(700) DEFAULT NULL
+  `comments` varchar(700) DEFAULT NULL,
+   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-
---
--- Indexes for table `customerdata`
---
-ALTER TABLE `customerdata`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `customerdata`
---
-ALTER TABLE `customerdata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

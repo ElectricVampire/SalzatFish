@@ -1,11 +1,50 @@
 <?php
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+$companyname = $_POST['companyname'];
+$phone = $_POST['phone'];
+$address = $_POST['address'];
+$comment = $_POST['comment'];
+
+// Db save
 $mysqli = new mysqli("localhost", "root", "", "db_salzatfish");
-extract($_POST);
-$sql = "INSERT into customerdata(name,age,gender,phnNumber,company,email,address, comments) VALUES('Ashu',10,'m','8108284692','fish','abc@xyz.com','mumbai','asdjasdjladkl')";
+$sql = "INSERT into customerdata(name,phnNumber,company,email,address, comments) VALUES('$name','$phone','$companyname','$email','$address','$comment')";
+var_dump($sql);
 $success = $mysqli->query($sql);
 if (!$success) {
     die("Couldn't enter data: ".$mysqli->error);
 }
 echo "Thank You For Contacting Us ";
-$conn->close();
+$mysqli->close();
+
+// Email
+$from = "some email id";
+$headers = "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+$headers .= "From: $from\n";
+$headers .= "Reply-To: $from";
+
+$subject = "Greetings from SalzatFish";
+$body = "Thanks $name for contacting us. We will get in touch with you soon.";
+var_dump($body);
+// If there are no errors, send the email
+  if (mail($email, $subject, $body, $headers)) {
+    $result = '<div class="alert alert-success">Thank You! I will be in touch</div>';
+  } else {
+    $result = '<div class="alert alert-danger">Sorry there was an error sending your message. Please try again later</div>';
+  }
+// Sms
+$username="pareeka2";
+$password="Ashu@1995";
+$message="hello";
+$sender="********"; //ex:INVITE
+$mobile_number=$phone;
+$template_id='123';
+
+$url="http://api.bulksmsgateway.in/sendmessage.php?user=.urlencode($username)."&password=".urlencode($password)."&mobile=".urlencode($mobile_number)."&message=".urlencode($message)."&sender=".urlencode($sender)."&type=".urlencode('3')."&template_id=".urlencode($template_id);
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$curl_scraped_page = curl_exec($ch);
+curl_close($ch);
 ?>
