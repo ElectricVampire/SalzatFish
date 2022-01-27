@@ -39,12 +39,12 @@ $username="pareeka2";
 $password="Ashu@1995";
 $message="hello";
 $sender="********"; //ex:INVITE
-$mobile_number=$phone;
+$number=$phone;
 $template_id='123';
 
-$url="http://api.bulksmsgateway.in/sendmessage.php?user=.urlencode($username)."&password=".urlencode($password)."&mobile=".urlencode($mobile_number)."&message=".urlencode($message)."&sender=".urlencode($sender)."&type=".urlencode('3')."&template_id=".urlencode($template_id);
+$url="http://api.bulksmsgateway.in/sendmessage.php?user=".urlencode($username)."&password=".urlencode($password)."&mobile=".urlencode($number)."&sender=".urlencode($sender)."&message=".urlencode($message)."&type=".urlencode('3')."&template_id=".urlencode($template_id);
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$curl_scraped_page = curl_exec($ch);
-curl_close($ch);
+echo $curl_scraped_page = curl_exec($ch);
+curl_close($ch); 
 ?>
