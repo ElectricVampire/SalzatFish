@@ -10,12 +10,10 @@ $comment = $_POST['comment'];
 // Db save
 $mysqli = new mysqli("localhost", "root", "", "db_salzatfish");
 $sql = "INSERT into customerdata(name,phnNumber,company,email,address, comments) VALUES('$name','$phone','$companyname','$email','$address','$comment')";
-var_dump($sql);
 $success = $mysqli->query($sql);
 if (!$success) {
     die("Couldn't enter data: ".$mysqli->error);
 }
-echo "Thank You For Contacting Us ";
 $mysqli->close();
 
 // Email
@@ -27,7 +25,6 @@ $headers .= "Reply-To: $from";
 
 $subject = "Greetings from SalzatFish";
 $body = "Thanks $name for contacting us. We will get in touch with you soon.";
-var_dump($body);
 // If there are no errors, send the email
   if (mail($email, $subject, $body, $headers)) {
     $result = '<div class="alert alert-success">Thank You! I will be in touch</div>';

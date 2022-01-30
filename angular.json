@@ -26,7 +26,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/admin.html",
-              "src/admin.css"                  
+              "src/admin.css"         
             ],
             "styles": [
               "src/styles.css",

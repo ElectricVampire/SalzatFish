@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -15,6 +16,7 @@ import { ProductsComponent } from './products/products.component';
 import { InvestmentComponent } from './investment/investment.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,12 +28,13 @@ import { InvestmentComponent } from './investment/investment.component';
     ServicesComponent,
     ContactComponent,
     ProductsComponent,
-    InvestmentComponent
+    InvestmentComponent,
   ],
   imports: [
-    BrowserModule,
-    // AppRoutingModule,
-    NgbModule
+    BrowserModule,    
+    HttpClientModule,
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

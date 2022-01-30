@@ -34,32 +34,32 @@
         </div>
 
       </div>
-
+ 
       <div class="form">
-        <form action="assets/forms/contact.php" method="post" role="form" class="php-email-form">
+        <form method="post" role="form" class="php-email-form">
           <div class="row">
             <div class="form-group col-md-4">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              <input type="text" name="name" class="form-control" [(ngModel)]="name" id="name" placeholder="Your Name" required>
             </div>
             <div class="form-group col-md-4">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              <input type="email" class="form-control" name="email" id="email" [(ngModel)]="email" placeholder="Your Email" required>
             </div>
             <div class="form-group col-md-4">
-              <input type="tel" class="form-control" name="phone" id="phone" pattern="[0-9]{10}" placeholder="Your Contact Number(8108281642)" required>
+              <input type="tel" class="form-control" name="phone" id="phone" [(ngModel)]="phone" pattern="[0-9]{10}" placeholder="Your Contact Number(8108281642)" required>
             </div>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+            <input type="text" class="form-control" name="subject" id="subject" [(ngModel)]="subject" placeholder="Subject" required>
           </div>
           <div class="form-group">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            <textarea class="form-control" name="message" rows="5" [(ngModel)]="message" placeholder="Message" required></textarea>
           </div>
           <div class="my-3">
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your message has been sent. Thank you!</div>
+            <div class="loading" *ngIf="isLoading">Loading</div>
+            <div class="alert alert-success" *ngIf="!isFirstLoad && emailSendResponse">Thank You! We will be in touch.</div>
+            <div class="alert alert-danger" *ngIf="!isFirstLoad && !emailSendResponse">Sorry there was an error sending your message. Please try again later.</div>
           </div>
-          <div class="text-center"><button type="submit">Send Message</button></div>
+          <div class="text-center"><button type="button" (click)="sendEmail()">Send Message</button></div>
         </form>
       </div>
 
