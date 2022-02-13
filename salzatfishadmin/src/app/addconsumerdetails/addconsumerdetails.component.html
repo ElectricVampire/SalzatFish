@@ -1,0 +1,99 @@
+<div id="adddetails" class="tabcontent">
+  <div class="form">
+    <form role="form" class="php-email-form">
+      <div class="row form-group">
+        <div class="col-md-4">
+          <input
+            type="text"
+            name="name"
+            class="form-control"
+            id="name"
+            [(ngModel)]="name"
+            placeholder="Name"
+            required
+          />
+        </div>
+        <div class="col-md-4">
+          <input
+            type="text"
+            class="form-control"
+            name="companyname"
+            id="companyname"
+            [(ngModel)]="companyname"
+            placeholder="Company Name"
+            required
+          />
+        </div>
+        <div class="col-md-4">
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            id="email"
+            [(ngModel)]="email"
+            placeholder="Your Email"
+            required
+          />
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-md-4">
+          <input
+            type="tel"
+            class="form-control"
+            name="phone"
+            id="phone"
+            [(ngModel)]="phone"
+            pattern="[0-9]{10}"
+            placeholder="Contact Number"
+            required
+          />
+        </div>
+        <div class="col-md-8">
+          <input
+            type="text"
+            class="form-control"
+            name="address"
+            id="address"
+            [(ngModel)]="address"
+            placeholder="Address"
+            required
+          />
+        </div>
+      </div>
+
+      <div>
+        <textarea
+          class="form-control customtextarea"
+          name="comment"
+          rows="5"
+          id="comments"
+          [(ngModel)]="comments"
+          placeholder="Comments"
+          required
+        ></textarea>
+      </div>
+      <div class="my-3">
+        <div class="loading text-center" *ngIf="!isFirstTimeLoad && isLoading">
+          Loading
+        </div>
+        <div
+          class="alert alert-success"
+          *ngIf="!isFirstTimeLoad && isResponseSuccess"
+        >
+          Details have been saved. Thank you!
+        </div>
+        <div
+          class="alert alert-danger"
+          *ngIf="!isFirstTimeLoad && !isResponseSuccess"
+        >
+          Sorry there was an error while saving the details. Please try again
+          later.
+        </div>
+      </div>
+      <div class="text-center">
+        <button type="button" (click)="saveDetails()">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

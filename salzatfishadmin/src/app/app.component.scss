@@ -1,0 +1,17 @@
+.tabcontainer
+{
+    padding: 10px;
+    border: 1px solid #ced4da;
+}
+
+.tab
+{
+    border-radius: 0;
+    background-color: #18d26e!important;
+    color: #fff!important;
+}
+
+.tab .nav-link .nav-item .active
+{
+    text-decoration: underline;
+}

@@ -1,0 +1,17 @@
+<app-header></app-header>
+<nav ngbNav #nav="ngbNav" class="nav-tabs" style="margin-top: 100px">
+  <ng-container ngbNavItem>
+    <a class="tab" ngbNavLink>Add Consumer Details</a>
+    <ng-template ngbNavContent>
+      <app-addconsumerdetails></app-addconsumerdetails>
+    </ng-template>
+  </ng-container>
+  <ng-container ngbNavItem>
+    <a class="tab" ngbNavLink>View Consumer Details</a>
+    <ng-template ngbNavContent>
+      <app-viewconsumerdetails></app-viewconsumerdetails>
+    </ng-template>
+  </ng-container>
+</nav>
+
+<div [ngbNavOutlet]="nav" class="tabcontainer"></div>

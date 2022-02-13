@@ -5,6 +5,7 @@ header("Access-Control-Allow-Origin: *");
 header('Access-Control-Allow-Methods: POST');
 header("Access-Control-Allow-Headers: *");
 $entityBody = json_decode(file_get_contents("php://input"));
+error_log($entityBody);
 //print $entityBody;
 $name = $entityBody->name;
 
